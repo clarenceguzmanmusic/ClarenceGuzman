@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clarence Guzman - About</title>
+<link rel="shortcut icon"  href="images/UPDATED - PROFILE LOGO.png">
+<link rel="stylesheet" href="style.css">
+<style>
+/* Optional: smooth scroll for anchor links on same page */
+html {
+    scroll-behavior: smooth;
+}
+</style>
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div class="loader" id="loader">
+    <div class="loader-content">
+        <img src="images/UPDATED - PROFILE LOGO - TRANS.png" class="loader-logo" alt="Loading Logo">
+        <div style="color: white; font-size: 18px; text-transform: uppercase; letter-spacing: 3px;">
+            LOADING...
+        </div>
+    </div>
+</div>
+
+<!-- Navigation Header -->
+<header class="header" id="header">
+    <nav class="nav-container">
+
+        <!-- Logo -->
+        <a href="index.html#home" class="logo">
+            <img src="images/ClarenceGuzman_Logo_Header.png" alt="Logo" class="logo-icon">
+        </a>
+
+        <!-- Nav Menu -->
+            <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html#home" class="nav-link">Home</a></li>
+        <li><a href="index.html#new-release" class="nav-link">NEW RELEASE</a></li>
+        <li><a href="index.html#playlist" class="nav-link">PLAYLISTS</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        <li><a href="about.html" class="nav-link active">About</a></li>
+        <li><a href="demo.html" class ="nav-link external-link">SUBMIT A DEMO</a></li>
+            
+    </ul>
+
+
+        <!-- Hamburger Menu for mobile -->
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </nav>
+</header>
+
+<!-- About Me Section -->
+<section class="about-section" id="about-me">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-container">
+        <img src="images/308798267_682376049416978_6505952611303628049_n.jpg" alt="Photo" class="about-photo">
+
+        <div class="about-text">
+            <p>
+                I’m <strong>Christian Clarence Guzman</strong>, a 20-year-old music producer from the Philippines.
+                with a deep passion for crafting House and Progressive House music.
+                Over the years, I’ve dedicated myself to mastering the art of production,
+                constantly exploring new sounds and techniques to bring my musical ideas to life.
+                <br><br>
+                Currently, I’m experimenting with blending Pop and House, a creative journey that allows me
+                to refine my style and discover a sound that is uniquely my own.
+                <br><br>
+                My goal is to create music that not only moves people on the dance floor but also resonates
+                emotionally, bridging the energy of electronic music with the storytelling of Pop.
+                <br><br>
+                Every track I produce is a reflection of my growth as an artist and my commitment
+                to pushing the boundaries of what my music can be.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+        <footer class="footer"> 
+            <div class="footer-content">
+
+
+
+                    <a href="https://www.facebook.com/clarenceguzmanmusic" class="social-icon">
+            <img src="images/Facebook-Logo.png" alt="Facebook">
+        </a>
+
+        <a href="https://www.youtube.com/@clarenceguzmanmusic" class="social-icon">
+            <img src="images/Youtube_Logo.png" alt="YouTube">
+        </a>
+
+        <a href="https://soundcloud.com/clarenceguzmanmusic" class="social-icon">
+            <img src="images/Soundcloud-Logo.png" alt="SoundCloud">
+        </a>
+
+        <a href="https://www.instagram.com/clarenceguzmanmusic/" class="social-icon">
+            <img src="images/Instagram-Logo.png" alt="Instagram">
+        </a>
+        <a href="https://open.spotify.com/artist/360KGuOTUgVFxAVV1gkF9C?si=W9WutIKXTAKgyp2X9W7uBg" class="social-icon">
+            <img src="images/Spotify_Logo.png" alt="Spotify">
+        </a>
+</div>
+
+        
+
+    <div class="footer-bottom">
+        <div class="copyright">© 2025 Clarence Guzman.</div>
+        <div class="footer-credits">Made with Love | 🇵🇭</div>
+    </div>
+</footer>
+<script>
+// Optional: smooth scroll to index.html sections when coming from about.html
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+
+        // If it is an index.html link with hash
+        if (href.startsWith('index.html#')) {
+            // Let the browser navigate to index.html first
+            return;
+        }
+    });
+});
+
+// Mobile menu toggle
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+    });
+}
+
+// Loading screen hide
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    if (loader) setTimeout(() => loader.classList.add('hidden'), 1500);
+});
+</script>
+
+</body>
+</html>
