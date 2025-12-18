@@ -1,7 +1,7 @@
 const portfolioData = [
     { id: 1, title: 'Gone', description: 'A heartfelt song about missing someone and feeling their absence.', image: 'images/Gone - CoverArt.jpg', tech: ['Piano House', 'Progressive House', 'EDM'] },
     { id: 2, title: 'Lost In Your Eyes', description: 'A emotive song that feels wistful and hopeful, as if longing for someone’s love while holding onto memories.', image: 'images/Lost In Your Eyes - CoverArt.jpg', tech: ['Progressive House', 'EDM'] },
-    { id: 3, title: 'Control It', description: 'Secure decentralized storage solution using advanced encryption and distributed ledger technology.', image: 'images/Control It - CoverArt.jpg', tech: ['Pop', 'Pop/House'] },
+    { id: 3, title: 'Control It', description: 'A intense Pop track for its melodies and power!', image: 'images/Control It - CoverArt.jpg', tech: ['Pop', 'Pop/House'] },
     { id: 4, title: 'Take Me', description: 'A dreamy, inviting house‑track that feels like asking someone to take you away from your worries and into the night.', image: 'images/Take Me - CoverArt.jpg', tech: ['Future House', 'EDM'] },
     { id: 5, title: 'Remember', description: 'A pulsating synthwave track filled with retro-futuristic synths and driving rhythms, evoking the feeling of a night drive through neon-lit streets.', image: 'images/Remember - CoverArt.jpg', tech: ['Synthwave', 'Chill', 'Night Vibes'] },
     { id: 6, title: 'Easy To Love', description: 'a moody, atmospheric synth‑heavy track that feels like cruising under neon lights late at night.', image: 'images/Easy To Love - CoverArt.jpg', tech: ['Future House', 'EDM'] },
