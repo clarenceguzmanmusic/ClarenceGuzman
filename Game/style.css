@@ -1,0 +1,330 @@
+:root {
+    --primary-black: #0a0a0a;
+    --carbon-dark: #121212;
+    --carbon-medium: #1c1c1c;
+    --accent-blue: #00c6ff;
+    --accent-purple: #0072ff;
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(180deg,
+        rgba(18, 18, 18, 0.98) 0%,
+        rgba(18, 18, 18, 0.9) 50%,
+        rgba(18, 18, 18, 0) 100%);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.header.scrolled {
+    background: rgba(18, 18, 18, 0.98);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+}
+
+.logo-icon {
+    width: 270px;
+    height: auto;
+    margin-right: 3px;
+    position: relative;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    align-items: center;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    transition: color 0.3s ease;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.nav-menu a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::before,
+.nav-menu a.active::before {
+    width: 80%;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--accent-blue);
+}
+
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 255, 255, 0.03) 2px,
+            rgba(255, 255, 255, 0.03) 4px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 255, 255, 0.03) 2px,
+            rgba(255, 255, 255, 0.03) 4px
+        ),
+        linear-gradient(
+            135deg,
+            var(--primary-black) 0%,
+            var(--carbon-dark) 25%,
+            var(--carbon-medium) 50%,
+            var(--carbon-dark) 75%,
+            var(--primary-black) 100%
+        );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--primary-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.loader-logo {
+    width: 200px;
+    height: auto;
+    animation: fadePulse 2s ease-in-out infinite;
+}
+
+.loader-text {
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.game-container {
+    text-align: center;
+    margin-top: 120px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.stats {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 10px;
+    max-width: 440px;
+    aspect-ratio: 1 / 1; 
+    justify-content: center;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    background: #1f1f1f;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    transition: background 0.3s; 
+}
+.card img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; 
+}
+
+.card.flipped img {
+    opacity: 1; 
+}
+
+.card.flipped {
+    background: #4caf50;
+}
+
+.card.matched {
+    background: #2e7d32;
+    cursor: default;
+}
+
+
+button {
+    margin-top: 15px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #4caf50;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #43a047;
+}
+
+@keyframes fadePulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .board {
+        max-width: 360px; 
+        gap: 8px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .board {
+        max-width: 300px; 
+        gap: 6px;
+    }
+    .logo-icon {
+        width: 180px;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 30px;
+        flex-direction: column;
+        gap: 10px;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 15px;
+        border-radius: 10px;
+    }
+    .nav-menu.show {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .board {
+        max-width: 250px; 
+        gap: 5px;
+    }
+    .logo-icon {
+        width: 150px;
+    }
+    h1 {
+        font-size: 18px;
+    }
+    .stats {
+        font-size: 16px;
+    }
+}

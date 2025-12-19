@@ -1,0 +1,19 @@
+background{
+		repeating-linear-gradient(0deg,
+			transparent,
+			transparent 2px,
+			rgba(255, 255, 255, 0.03) 2px,
+			rgba(255, 255, 255, 0.03) 4px),
+		repeating-linear-gradient(90deg,
+			transparent,
+			transparent 2px,
+			rgba(255, 255, 255, 0.03) 2px,
+			rgba(255, 255, 255, 0.03) 4px),
+		linear-gradient(135deg,
+			var(--primary-black) 0%,
+			var(--carbon-dark) 25%,
+			var(--carbon-medium) 50%,
+			var(--carbon-dark) 75%,
+			var(--primary-black) 100%);
+	z-index: -2;
+}

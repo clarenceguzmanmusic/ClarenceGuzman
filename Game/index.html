@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MEMORY TEST!</title>
+<link rel="shortcut icon"  href="images/UPDATED - PROFILE LOGO.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<div class="loader" id="loader">
+    <div class="loader-content">
+        <img src="images/UPDATED - PROFILE LOGO - TRANS.png" class="loader-logo" alt="Loading Logo">
+        <div class="loader-text">LOADING...</div>
+    </div>
+</div>
+
+<header class="header" id="header">
+    <nav class="nav-container">
+        <a href="#home" class="logo">
+            <img src="images/ClarenceGuzman_Logo_Header.png" alt="Logo" class="logo-icon">
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="https://clarenceguzman.com" class="nav-link">Home</a></li>
+            <li><a href="https://clarenceguzman.com" class="nav-link">NEW RELEASE</a></li>
+            <li><a href="https://clarenceguzman.com" class="nav-link">PLAYLISTS</a></li>
+            <li><a href="https://clarenceguzman.com" class="nav-link">Contact</a></li>
+            <li><a href="https://clarenceguzman.com/about.html" class="nav-link external-link">About</a></li>
+            <li><a href="https://clarenceguzman.com/demo.html" class="nav-link external-link">SUBMIT A DEMO</a></li>
+        </ul>
+
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+
+<div class="game-container">
+    <h1>Can you Remember?</h1>
+    <div class="stats">Moves: <span id="moves">0</span></div>
+    <div class="board" id="board"></div>
+    <button id="restartBtn">Restart Game</button>
+</div>
+
+<script src="script.js"></script>
+<script>
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    setTimeout(() => loader.classList.add("hidden"), 2000);
+});
+</script>
+</body>
+</html>
